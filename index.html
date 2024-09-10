@@ -1,0 +1,52 @@
+<html>
+<head>
+<title> Even Odd APP </title>
+<style>
+* { font-size:50px;}
+body{background-color:azure;}
+.nav{background-color:black;}
+.nav a {color:white; text-decoration:none; margin:40px;}
+</style>
+</head>
+
+<body>
+<center>
+
+<div class="nav">
+<a href = "index.html">Home</a>
+<a href = "aboutus.html">AboutUs</a>
+</div>
+
+<h1>Even Odd App</h1>
+<form onsubmit = "check()">
+<input type = "number" id = "num" placeholder="enter integer"/>
+<br/><br/>
+<input type = "submit"/>
+</form>
+<h2 id="msg"/>
+<script>
+function check()
+{
+event.preventDefault();
+let num = document.getElementById("num");
+let msg = document.getElementById("msg");
+ 
+if(num.value==="")
+{
+alert("please enter integer");
+msg.innerHTML="";
+num.focus();
+return;
+}
+
+
+let n= parseInt(num.value);
+let r = n%2 ===0? "even":"odd";
+msg.innerHTML= r;
+
+
+}
+</script>
+</center>
+</body>
+</html>
